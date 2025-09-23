@@ -2601,6 +2601,9 @@ a {
   .reviews-2 {
     display: none;
   }
+  .reviews-22 {
+    display: none;
+  }
 }
 .slider-container {
   position: relative;
@@ -2736,12 +2739,152 @@ a {
   background-image: url("../assets/img/comments/10.PNG");
 }
 
+/* Фонові зображення для слайдів reviews-22 */
+#slide22-1 {
+  background-image: url("../assets/img/comments/21.PNG");
+}
+
+#slide22-2 {
+  background-image: url("../assets/img/comments/20.PNG");
+}
+
+#slide22-3 {
+  background-image: url("../assets/img/comments/19.PNG");
+}
+
+#slide22-4 {
+  background-image: url("../assets/img/comments/18.PNG");
+}
+
+#slide22-5 {
+  background-image: url("../assets/img/comments/6.PNG");
+}
+
+#slide22-6 {
+  background-image: url("../assets/img/comments/7.PNG");
+}
+
+#slide22-7 {
+  background-image: url("../assets/img/comments/8.PNG");
+}
+
+#slide22-8 {
+  background-image: url("../assets/img/comments/9.PNG");
+}
+
+#slide22-9 {
+  background-image: url("../assets/img/comments/10.PNG");
+}
+
 .slider-reviews {
   margin-bottom: 25px;
 }
 
+/* Стилі для reviews-22 слайдера */
+.reviews-22 .slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 25px;
+  background-color: #F9F9F9;
+}
+
+.reviews-22 .slider-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  padding: 0 35px 0 35px;
+  background-color: #F9F9F9;
+}
+
+.reviews-22 .slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(25% - 15px);
+          flex: 0 0 calc(25% - 15px);
+  /* Кожен слайд займає 25% ширини контейнера мінус відступ */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-right: 15px;
+  /* Відступ між слайдами */
+}
+
+.reviews-22 .slide:last-child {
+  margin-right: 0;
+}
+
+.reviews-22 .slide:first-child {
+  margin-left: 15px;
+}
+
+/* Для екранів розміром менше 1000px */
+@media (max-width: 1366px) {
+  .reviews-22 .slide {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+  }
+}
+
+.reviews-22 .prev,
+.reviews-22 .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -25px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.reviews-22 .next {
+  right: 0px;
+  border-radius: 3px 0 0 3px;
+}
+
+.reviews-22 .dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.reviews-22 .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+.reviews-22 .dot.active,
+.reviews-22 .dot:hover {
+  background-color: #717171;
+}
+
 /******************custom-slider**********************/
 .custom-slider {
+  display: none;
+}
+
+.custom-slider22 {
   display: none;
 }
 
@@ -2808,6 +2951,80 @@ a {
     /* Забороняє події миші на контейнері */
   }
   .custom-control {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    pointer-events: auto;
+    /* Включає події миші для кнопок */
+    margin: 0 10px;
+    /* Додає відступ між кнопками і краями слайдера */
+  }
+
+  /* Стилі для custom-slider22 */
+  .custom-slider22 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    /* Висота слайдера */
+    position: relative;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* Вирівнювання слайдів по центру */
+    margin: 30px auto;
+  }
+  .custom-slider22 .custom-slides22 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transition: -webkit-transform 0.5s ease;
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    height: 100%;
+  }
+  .custom-slider22 .custom-slide22 {
+    min-width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* Вирівнювання зображень по центру */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .custom-slider22 .custom-slide22 img {
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    /* Зберігає пропорції зображень */
+  }
+  .custom-slider22 .custom-controls22 {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    pointer-events: none;
+    /* Забороняє події миші на контейнері */
+  }
+  .custom-slider22 .custom-control22 {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;

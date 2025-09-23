@@ -574,26 +574,22 @@
                </section>
 
 
-               <section id="reviews-2" class="section reviews reviews-2">
+               <section id="reviews-22" class="section reviews reviews-22">
                   <div class="container container-reviews">
                      <h2>Відгуки від моїх клієнтів та учнів після навчання</h2>
 
                      <div class="slider-body">
                         <div class="slider-container">
-                           <div class="slider-wrapper" id="slider1">
-                              <div class="slide" id="slide-1"></div>
-                              <div class="slide" id="slide-2"></div>
-                              <div class="slide" id="slide-3"></div>
-                              <div class="slide" id="slide-4"></div>
-                              <div class="slide" id="slide-5"></div>
-                              <div class="slide" id="slide-6"></div>
-                              <div class="slide" id="slide-7"></div>
-                              <div class="slide" id="slide-8"></div>
-                              <div class="slide" id="slide-9"></div>
+                           <div class="slider-wrapper" id="slider22">
+                              <div class="slide" id="slide22-1"></div>
+                              <div class="slide" id="slide22-2"></div>
+                              <div class="slide" id="slide22-3"></div>
+                              <div class="slide" id="slide22-4"></div>
+
                            </div>
 
-                           <div class="prev" onclick="prevSlide('slider1')">&#10094;</div>
-                           <div class="next" onclick="nextSlide('slider1')">&#10095;</div>
+                           <div class="prev" onclick="prevSlide22('slider22')">&#10094;</div>
+                           <div class="next" onclick="nextSlide22('slider22')">&#10095;</div>
                         </div>
                      </div>
 
@@ -601,27 +597,27 @@
                </section>
 
                <section>
-                  <div class="custom-slider">
-                     <div class="custom-slides">
+                  <div class="custom-slider22">
+                     <div class="custom-slides22">
 
-                        <div class="custom-slide">
+                        <div class="custom-slide22">
                            <img src="./assets/img/comments/18.PNG" alt="Image 5">
                         </div>
-                        <div class="custom-slide">
+                        <div class="custom-slide22">
                            <img src="./assets/img/comments/19.PNG" alt="Image 6">
                         </div>
-                        <div class="custom-slide">
+                        <div class="custom-slide22">
                            <img src="./assets/img/comments/20.PNG" alt="Image 7">
                         </div>
-                        <div class="custom-slide">
+                        <div class="custom-slide22">
                            <img src="./assets/img/comments/21.PNG" alt="Image 8">
                         </div>
                         
                         
                      </div>
-                     <div class="custom-controls">
-                        <button class="custom-control custom-prev">&lt;</button>
-                        <button class="custom-control custom-next">&gt;</button>
+                     <div class="custom-controls22">
+                        <button class="custom-control22 custom-prev22">&lt;</button>
+                        <button class="custom-control22 custom-next22">&gt;</button>
                      </div>
                   </div>
                </section>
@@ -903,6 +899,24 @@
    </script>
 
    <script>
+      // Незалежний JavaScript для custom-slider22
+      const customSlides22 = document.querySelector('.custom-slides22');
+      const customPrev22 = document.querySelector('.custom-prev22');
+      const customNext22 = document.querySelector('.custom-next22');
+      let customIndex22 = 0;
+
+      function showCustomSlide22(i) {
+         customIndex22 = (i + customSlides22.children.length) % customSlides22.children.length;
+         customSlides22.style.transform = `translateX(-${customIndex22 * 100}%)`;
+      }
+
+      if (customPrev22 && customNext22) {
+         customPrev22.addEventListener('click', () => showCustomSlide22(customIndex22 - 1));
+         customNext22.addEventListener('click', () => showCustomSlide22(customIndex22 + 1));
+      }
+   </script>
+
+   <script>
       let currentSlide1 = 0;
 
       function showSlide(index, sliderId) {
@@ -958,6 +972,68 @@
 
       // Show the initial slides
       showSlide(currentSlide1, 'slider1');
+
+   </script>
+
+   <script>
+      // Незалежний JavaScript для reviews-22 слайдера
+      let currentSlide22 = 0;
+
+      function showSlide22(index, sliderId) {
+         const sliderWrapper = document.getElementById(sliderId);
+         const slides = sliderWrapper.querySelectorAll('.slide');
+         const totalSlides = slides.length;
+         const slidesToShow = 4; // Кількість слайдів, що показуються одночасно
+         const slideWidth = sliderWrapper.clientWidth / slidesToShow; // Ширина одного слайда
+
+         if (index > totalSlides - slidesToShow) {
+            index = totalSlides - slidesToShow;
+         }
+         if (index < 0) {
+            index = 0;
+         }
+
+         if (sliderId === 'slider22') {
+            currentSlide22 = index;
+         }
+
+         const offset = index * (slideWidth + 15); // Відсоткове зсування для відображення 4 слайдів з урахуванням відступів
+         sliderWrapper.style.transform = `translateX(${-offset}px)`;
+      }
+
+      function prevSlide22(sliderId) {
+         if (sliderId === 'slider22') {
+            currentSlide22 = Math.max(currentSlide22 - 1, 0);
+            showSlide22(currentSlide22, sliderId);
+         }
+      }
+
+      function nextSlide22(sliderId) {
+         const sliderWrapper = document.getElementById(sliderId);
+         const slides = sliderWrapper.querySelectorAll('.slide');
+         const totalSlides = slides.length;
+         const slidesToShow = 4;
+
+         if (sliderId === 'slider22') {
+            currentSlide22 = Math.min(currentSlide22 + 1, totalSlides - slidesToShow);
+            showSlide22(currentSlide22, sliderId);
+         }
+      }
+
+      // Optional: Create dots for navigation для reviews-22
+      const slides22 = document.querySelectorAll('#slider22 .slide');
+      const dotsContainer22 = document.getElementById('dots-container22');
+      if (dotsContainer22) {
+         slides22.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.onclick = () => showSlide22(index, 'slider22');
+            dotsContainer22.appendChild(dot);
+         });
+      }
+
+      // Show the initial slides для reviews-22
+      showSlide22(currentSlide22, 'slider22');
 
    </script>
 
